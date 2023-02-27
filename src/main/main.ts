@@ -23,7 +23,16 @@ class AppUpdater {
   }
 }
 
+
+
 let mainWindow: BrowserWindow | null = null;
+
+mainWindow = new BrowserWindow({
+  show: false,
+  autoHideMenuBar: true,
+  frame: false,
+  // rest of your config
+});
 
 ipcMain.on('ipc-example', async (event, arg) => {
   const msgTemplate = (pingPong: string) => `IPC test: ${pingPong}`;
